@@ -1,103 +1,4 @@
-function scrollToSection(sectionId) {
-  const section = document.querySelector(sectionId);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-}
-function createSpaceVibe(numStars) {
-  const footer = document.getElementById("footer");
-  if (!footer) return;
-
-  // Create stars
-  for (let i = 0; i < numStars; i++) {
-    const star = document.createElement("i");
-    star.classList.add("fas", "fa-star", "random-star");
-    star.style.position = "absolute";
-    star.style.color = "white";
-    star.style.fontSize = `${Math.random() * 10 + 5}px`;
-    star.style.left = `${Math.random() * 100}vw`;
-    star.style.top = `${Math.random() * footer.offsetHeight}px`;
-    star.style.opacity = Math.random();
-    star.style.animation = `twinkle ${Math.random() * 5 + 3}s linear infinite`;
-    footer.appendChild(star);
-  }
-
-  // Create sun
-  const sun = document.createElement("div");
-  sun.classList.add("sun");
-
-  sun.style.position = "absolute";
-  sun.style.width = "130px";
-  sun.style.height = "130px";
-  sun.style.background = "linear-gradient(to right, #ffcc00, #ff9933)";
-  sun.style.borderRadius = "50%";
-  sun.style.boxShadow = "0 0 50px #ff9933";
-  sun.style.left = "5%";
-  sun.style.top = "75%";
-  footer.appendChild(sun);
-
-  // Create Earth
-  const earth = document.createElement("div");
-  earth.classList.add("earth");
-  earth.style.position = "absolute";
-  earth.style.width = "80px";
-  earth.style.height = "80px";
-  earth.style.backgroundImage = 'url("earth.jpeg")'; // Replace with your Earth image URL
-  earth.style.backgroundSize = "cover";
-  earth.style.backgroundPosition = "50% center";
-  earth.style.backgroundRepeat = "no-repeat";
-  earth.style.borderRadius = "50%";
-  earth.style.boxShadow = "0 0 30px #0077be";
-  earth.style.left = "59%"; // Adjust Earth position
-  earth.style.top = "30%"; // Adjust Earth position
-  footer.appendChild(earth);
-
-  // Create Moon
-  const moon = document.createElement("div");
-  moon.classList.add("moon");
-  moon.style.position = "absolute";
-  moon.style.width = "40px";
-  moon.style.height = "40px";
-  moon.style.backgroundImage = 'url("moon.jpg")';
-
-  moon.style.backgroundPosition = "center center"; // Center
-  moon.style.borderRadius = "50%";
-  moon.style.boxShadow = "0 0 20px #aaa";
-  moon.style.left = "64%";
-  moon.style.top = "25%";
-  moon.style.transform = "scale(1.2)";
-  footer.appendChild(moon);
-  moon.style.backgroundSize = "130% 130%"; // Even more
-  // overscale
-  moon.style.zIndex = 1;
-}
-
-createSpaceVibe(50);
-
-earth.classList.add("earth");
-moon.classList.add("moon");
-
-const style = document.createElement("style");
-style.textContent = `
-  @keyframes twinkle {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
-  }
-  .random-star {
-    pointer-events: none;
-  }
-  .sun {
-    pointer-events: none;
-  }
-  .earth {
-    pointer-events: none;
-  }
-  .moon{
-    pointer-events: none;
-  }
-`;
-document.head.appendChild(style);
-document.head.appendChild(style);
+//sec1 animations
 gsap.from(".main-text .line1", {
   opacity: 0,
   x: -100,
@@ -209,14 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
-//adding functionality to nav menu
-function scrollToSection(id) {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-}
-
 //sec5 animations
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
@@ -350,133 +243,113 @@ document.addEventListener("DOMContentLoaded", function () {
   // });
 });
 
-//sec3 animations
-var tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".main",
-    start: "50% 50%",
-    end: ".section-4 100%",
-    scrub: 2,
-    pin: true,
-    markers: false,
-  },
-});
-
-tl.to(
-  ".top",
-  {
-    top: "-50%",
-    ease: "power2.inOut",
-  },
-  "a"
-)
-  .to(
-    ".bottom",
-    {
-      bottom: "-50%",
-      ease: "power2.inOut",
-    },
-    "a"
-  )
-  .to(
-    "#tp, #bp",
-    {
-      opacity: 0,
-      ease: "power2.inOut",
-    },
-    "a"
-  );
-
-let target = 0;
-let current = 0;
-let ease = 0.075;
-let slideCount = 5; // Updated to 5 slides
-let currentSlide = 1;
-
-const slider = document.querySelector(".slider");
-const sliderWrapper = document.querySelector(".slider-wrapper");
-const markerWrapper = document.querySelector(".marker-wrapper");
-const activeSlide = document.querySelector(".active-slide");
-const slides = document.querySelectorAll(".slide");
-
-let maxScroll = sliderWrapper.offsetWidth - slider.offsetWidth;
-
-function lerp(start, end, factor) {
-  return start + (end - start) * factor;
-}
-
-function updateActiveSliderNumber(markerMove, markerMaxMove) {
-  const partWidth = markerMaxMove / slideCount;
-  let currentPart = Math.round((markerMove - 70) / partWidth) + 1;
-  currentPart = Math.min(slideCount, currentPart);
-  activeSlide.textContent = `${currentPart}/${slideCount}`;
-  currentSlide = currentPart;
-
-  slides.forEach((slide, index) => {
-    if (index === currentPart - 1) {
-      slide.style.backgroundColor = "lightblue";
-    } else {
-      slide.style.backgroundColor = "gray";
-    }
-  });
-}
-
-function update() {
-  current = lerp(current, target, ease);
-
-  gsap.set(".slider-wrapper", {
-    x: -current,
-  });
-
-  let moveRatio = current / maxScroll;
-  let markerMaxMove = slider.offsetWidth - markerWrapper.offsetWidth - 170;
-  let markerMove = 70 + moveRatio * markerMaxMove;
-
-  gsap.set(".marker-wrapper", {
-    x: markerMove,
-  });
-
-  updateActiveSliderNumber(markerMove, markerMaxMove);
-
-  requestAnimationFrame(update);
-}
-
-window.addEventListener("resize", () => {
-  maxScroll = sliderWrapper.offsetWidth - slider.offsetWidth;
-});
-
-let isDragging = false;
-let startX = 0;
-
-slider.addEventListener("mousedown", (e) => {
-  isDragging = true;
-  startX = e.clientX - current;
-  slider.style.cursor = "grabbing";
-});
-
-slider.addEventListener("mousemove", (e) => {
-  if (!isDragging) return;
-  const x = e.clientX - startX;
-  target = x;
-  target = Math.max(0, target);
-  target = Math.min(maxScroll, target);
-  if (tl && tl.scrollTrigger) {
-    tl.scrollTrigger.update();
-  }
-});
-
-slider.addEventListener("mouseup", () => {
-  isDragging = false;
-  slider.style.cursor = "grab";
-});
-
-slider.addEventListener("mouseleave", () => {
-  if (isDragging) {
-    isDragging = false;
-    slider.style.cursor = "grab";
-  }
-});
-
-update();
-
 /*sec5*/
+//footer sec animations
+function scrollToSection(sectionId) {
+  const section = document.querySelector(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
+function createSpaceVibe(numStars) {
+  const footer = document.getElementById("footer");
+  if (!footer) return;
+
+  // Create stars
+  for (let i = 0; i < numStars; i++) {
+    const star = document.createElement("i");
+    star.classList.add("fas", "fa-star", "random-star");
+    star.style.position = "absolute";
+    star.style.color = "white";
+    star.style.fontSize = `${Math.random() * 10 + 5}px`;
+    star.style.left = `${Math.random() * 100}vw`;
+    star.style.top = `${Math.random() * footer.offsetHeight}px`;
+    star.style.opacity = Math.random();
+    star.style.animation = `twinkle ${Math.random() * 5 + 3}s linear infinite`;
+    footer.appendChild(star);
+  }
+
+  // Create sun
+  const sun = document.createElement("div");
+  sun.classList.add("sun");
+
+  sun.style.position = "absolute";
+  sun.style.width = "130px";
+  sun.style.height = "130px";
+  sun.style.background = "linear-gradient(to right, #ffcc00, #ff9933)";
+  sun.style.borderRadius = "50%";
+  sun.style.boxShadow = "0 0 50px #ff9933";
+  sun.style.left = "5%";
+  sun.style.top = "75%";
+  footer.appendChild(sun);
+
+  // Create Earth
+  const earth = document.createElement("div");
+  earth.classList.add("earth");
+  earth.style.position = "absolute";
+  earth.style.width = "80px";
+  earth.style.height = "80px";
+  earth.style.backgroundImage = 'url("earth.jpeg")'; // Replace with your Earth image URL
+  earth.style.backgroundSize = "cover";
+  earth.style.backgroundPosition = "50% center";
+  earth.style.backgroundRepeat = "no-repeat";
+  earth.style.borderRadius = "50%";
+  earth.style.boxShadow = "0 0 30px #0077be";
+  earth.style.left = "59%"; // Adjust Earth position
+  earth.style.top = "30%"; // Adjust Earth position
+  footer.appendChild(earth);
+
+  // Create Moon
+  const moon = document.createElement("div");
+  moon.classList.add("moon");
+  moon.style.position = "absolute";
+  moon.style.width = "40px";
+  moon.style.height = "40px";
+  moon.style.backgroundImage = 'url("moon.jpg")';
+
+  moon.style.backgroundPosition = "center center"; // Center
+  moon.style.borderRadius = "50%";
+  moon.style.boxShadow = "0 0 20px #aaa";
+  moon.style.left = "64%";
+  moon.style.top = "25%";
+  moon.style.transform = "scale(1.2)";
+  footer.appendChild(moon);
+  moon.style.backgroundSize = "130% 130%"; // Even more
+  // overscale
+  moon.style.zIndex = 1;
+}
+
+createSpaceVibe(50);
+
+earth.classList.add("earth");
+moon.classList.add("moon");
+
+const style = document.createElement("style");
+style.textContent = `
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+  .random-star {
+    pointer-events: none;
+  }
+  .sun {
+    pointer-events: none;
+  }
+  .earth {
+    pointer-events: none;
+  }
+  .moon{
+    pointer-events: none;
+  }
+`;
+document.head.appendChild(style);
+document.head.appendChild(style);
+
+//adding functionality to nav menu
+function scrollToSection(id) {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
