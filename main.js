@@ -141,13 +141,23 @@ document.addEventListener("DOMContentLoaded", function () {
     ease: "back.out(1.5)",
     scrollTrigger: {
       trigger: ".skills-grid",
-      start: "top 90%", // Triggers animation slightly earlier
+      start: "top 90%",
       end: "top 50%",
-      scrub: 0.5, // Smooth but not too slow
+      scrub: 0.5,
       toggleActions: "play none none reverse",
     },
   });
 
+  // GSAP hover effect
+  document.querySelectorAll(".skills-grid img").forEach((img) => {
+    img.addEventListener("mouseenter", () => {
+      gsap.to(img, { scale: 1.4, duration: 0.3, ease: "power2.out" });
+    });
+
+    img.addEventListener("mouseleave", () => {
+      gsap.to(img, { scale: 1, duration: 0.3, ease: "sine.out" });
+    });
+  });
   // Animate the paragraph under skills
   gsap.from(".skill-p p", {
     opacity: 0,
