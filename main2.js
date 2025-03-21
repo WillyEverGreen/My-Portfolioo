@@ -126,3 +126,4 @@ slider.addEventListener("mouseleave", () => {
 });
 
 update();
+//footer sec

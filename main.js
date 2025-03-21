@@ -158,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
       gsap.to(img, { scale: 1, duration: 0.3, ease: "sine.out" });
     });
   });
+
   // Animate the paragraph under skills
   gsap.from(".skill-p p", {
     opacity: 0,

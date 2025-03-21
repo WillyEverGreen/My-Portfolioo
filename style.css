@@ -106,13 +106,7 @@ body {
 .bird {
   position: absolute;
   left: 58%;
-  top: -75%;
-}
-@media screen and (min-width: 1300px){
-  .bird {
-    position: absolute;
-    left: 58%;
-    top: -96%;}
+  top: -96%;
 }
 .menu-item {
   display: flex;
@@ -532,10 +526,6 @@ body {
   padding: 10px;
   background-color: rgba(255, 191, 53, 0.2);
   transition: transform 0.3s ease;
-}
-
-.skills-grid img:hover {
-  transform: scale(1.2);
 }
 
 .offers {
@@ -1195,7 +1185,6 @@ body {
   }
   .bird {
     position: absolute;
-   
   }
   .ele3 {
     text-align: right;
