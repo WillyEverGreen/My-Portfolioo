@@ -106,7 +106,14 @@ body {
 .bird {
   position: absolute;
   left: 58%;
-  top: -96%;
+  top: -75%;
+}
+@media screen and (min-width: 1300px) {
+  .bird {
+    position: absolute;
+    left: 58%;
+    top: -96%;
+  }
 }
 .menu-item {
   display: flex;
@@ -528,6 +535,10 @@ body {
   transition: transform 0.3s ease;
 }
 
+.skills-grid img:hover {
+  transform: scale(1.2);
+}
+
 .offers {
   display: flex;
   justify-content: center;
@@ -689,474 +700,20 @@ body {
 
 /* Responsive Design */
 
-/* Mobile */
-@media (max-width: 540px) {
-  .section-1 {
-    height: 160vh;
-    padding: 5vh 0;
-    width: 620px;
-  }
-
-  .section-1 .ele1 {
-    font-size: 7vw;
-    padding: 4vw;
-    padding-left: 8vw;
-  }
-  .hero-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .main-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-direction: column;
-    padding-left: 250px;
-  }
-
-  .main-text .line1 {
-    font-size: clamp(24px, 30vw, 80px);
-    text-align: center;
-  }
-
-  .main-text .line2 {
-    font-size: clamp(24px, 30vw, 80px);
-    text-align: center;
-  }
-  .ele3 {
-    font-size: 12px;
-    opacity: 0.7;
-  }
-  .menu-item {
-    width: 100px;
-  }
-  .nav-menu p {
-    font-size: 14px;
-  }
-
-  .side-text-content {
-    position: absolute;
-
-    font-size: 100px;
-  }
-
-  .side-text-content .line {
-    position: absolute;
-    left: 50%;
-  }
-  .side-text-content p {
-    font-size: 5vw;
-  }
-
-  .bird dotlottie-player {
-    max-width: 160px;
-  }
-  .bird {
-    position: absolute;
-    top: 100px; /* Adjust top position */
-    left: 195px;
-  }
-  .section-2 {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .about-me {
-    max-width: 100%;
-  }
-
-  .about-me-heading p {
-    font-size: 22px;
-  }
-
-  .about-me-content p {
-    font-size: 16px;
-    padding: 0 10px;
-    padding-bottom: 10px;
-  }
-
-  .about-me-resume dotlottie-player {
-    width: 250px;
-    height: 250px;
-  }
-}
-@media (max-width: 580px) {
-  .section-2 {
-    height: 400vh;
-
-    width: 620px;
-
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .my-image-card {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-  }
-
-  .card1 {
-    width: 320px;
-  }
-
-  .middle-part {
-    background-size: cover;
-    background-position: center;
-  }
-
-  .about-me {
-    width: 200%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-me-heading p {
-    font-size: 16vw;
-    font-weight: bold;
-    color: #bc4749;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers everything inside */
-    text-align: center;
-    width: 600px;
-    padding-right: 0;
-  }
-
-  .x-symbol {
-    opacity: 0; /* Hide X symbols */
-  }
-
-  .about-me-content {
-    font-size: 4vw;
-    line-height: 1.3;
-    padding-top: 15px;
-  }
-
-  .about-me-resume {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding-top: 20px;
-  }
-
-  .btn1,
-  .btn2 {
-    width: 80%;
-    font-size: 3vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  dotlottie-player {
-    width: 200px !important;
-    height: 200px !important;
-    margin-top: 20px;
-  }
-}
-@media (max-width: 580px) {
-  .section-3 {
-    height: 160vh;
-
-    width: 620px;
-
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #f2e8cf;
-    border-left: #f2e8cf;
-  }
-  .main {
-    background-color: #f2e8cf;
-  }
-  .top {
-    width: 620px;
-  }
-  .bottom {
-    width: 620px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .section-5 {
-    height: 160vh;
-
-    width: 620px;
-
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #f2e8cf;
-    border-left: #f2e8cf;
-    padding-bottom: 80px;
-  }
-}
-.skills {
-  grid-template-columns: repeat(3, 1fr); /* Show 2 icons per row */
-  grid-template-rows: repeat(auto-fill, minmax(60px, auto));
-  gap: 10px;
-}
-
-.skills img {
-  width: 50px;
-  height: 50px;
-}
-
-.tech-heading {
-  font-size: 10vw;
-  padding-top: 5vh;
-}
-@media (max-width: 580px) {
-  /* Section 1 */
-  .section-1 {
-    width: 100%;
-    height: auto;
-    padding: 5vh 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .section-1 .ele1 {
-    font-size: 7vw;
-    padding: 4vw;
-    padding-left: 8vw;
-  }
-
-  .hero-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .main-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-left: 0;
-  }
-
-  .main-text .line1,
-  .main-text .line2 {
-    font-size: clamp(24px, 30vw, 80px);
-  }
-
-  .ele3 {
-    font-size: 12px;
-    opacity: 0.7;
-  }
-
-  .menu-item {
-    width: 100px;
-  }
-
-  .nav-menu p {
-    font-size: 14px;
-  }
-
-  .side-text-content {
-    position: absolute;
-    font-size: 100px;
-  }
-
-  .side-text-content .line {
-    position: absolute;
-    left: 50%;
-  }
-
-  .side-text-content p {
-    font-size: 5vw;
-  }
-
-  .bird dotlottie-player {
-    max-width: 160px;
-  }
-
-  .bird {
-    position: absolute;
-    top: 100px;
-    left: 195px;
-  }
-}
-
-@media (max-width: 580px) {
-  /* Section 2 */
-  .section-2 {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .my-image-card {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-  }
-
-  .card1 {
-    width: 320px;
-  }
-
-  .middle-part {
-    background-size: cover;
-    background-position: center;
-  }
-
-  .about-me {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .about-me-heading p {
-    font-size: 10vw;
-    text-align: center;
-  }
-
-  .about-me-content {
-    font-size: 4vw;
-    line-height: 1.3;
-    padding: 15px 10px;
-  }
-}
-
-@media (max-width: 580px) {
-  /* Section 3 */
-  .section-3 {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #f2e8cf;
-  }
-
-  .main {
-    background-color: #f2e8cf;
-  }
-
-  .top,
-  .bottom {
-    width: 100%;
-  }
-}
-
-@media (max-width: 580px) {
-  /* Section 5 */
-  .section-5 {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #f2e8cf;
-    padding-bottom: 80px;
-  }
-}
-
-@media (max-width: 580px) {
-  /* Skills Section */
-  .skills {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(auto-fill, minmax(60px, auto));
-    gap: 10px;
-  }
-
-  .skills img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .tech-heading {
-    font-size: 10vw;
-    padding-top: 5vh;
-  }
-}
-
-@media (max-width: 580px) {
-  /* Footer Container */
-  .footer-container {
-    width: 100%;
-    text-align: center;
-  }
-
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    height: auto;
-  }
-
-  .footer-section {
-    width: 100%;
-    min-width: auto;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .footer h3 {
-    font-size: 5vw;
-    padding-top: 2vh;
-  }
-
-  .footer ul {
-    padding: 0;
-  }
-
-  .footer-icons a {
-    font-size: 18px;
-  }
-
-  .feedback-form input,
-  .feedback-form textarea {
-    width: 90%;
-  }
-
-  .space-animation {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .space-animation dotlottie-player {
-    width: 250px;
-    height: 250px;
-  }
-}
 /* writing media queries for smaller laptops */
 /* Media Query for Smaller Laptops (Max Width: 1280px) */
 @media (max-width: 1280px) {
   /* Navigation Bar Adjustments */
+  /* * {
+    outline: 1px solid red; /* Highlights all elements */
+  } */
+
   body {
     overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .ele1 {
@@ -1221,6 +778,9 @@ body {
   }
 
   /* Skills Section */
+  .section-5 {
+    gap: 10vh;
+  }
   .skills-grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1228,19 +788,48 @@ body {
   .skill-p p {
     font-size: 0.9rem;
   }
+  .offer-card h3 {
+    font-size: 1.2rem;
+    padding: 0;
+  }
+
+  .offer-card p {
+    font-size: 1rem;
+  }
 
   /* Offers Section */
-  .offers {
-    padding-right: 5vw;
+  @media (max-width: 1024px) {
+    .offers {
+      display: flex;
+      /* flex-direction: column; Stack cards in a column for smaller screens */
+      align-items: center;
+      gap: 20px;
+    }
+
+    .offer-card {
+      /* Adjust height based on content */
+      max-height: 500px !important; /* Set a limit to prevent overflow */
+      overflow: hidden; /* Prevent extra content from extending */
+    }
+
+    .offer-card img {
+      width: 100%; /* Makes image responsive */
+      max-width: 250px; /* Fix maximum image width */
+      height: 250px; /* Maintains aspect ratio */
+      display: block;
+      margin: 0 auto; /* Centers the image */
+      border-radius: 10px; /* Optional: Rounds corners for a better look */
+    }
+
+    .offer-card h3 {
+      font-size: 1.5rem !important;
+    }
+
+    .offer-card p {
+      font-size: 12px !important;
+    }
   }
 
-  .offer-card h3 {
-    padding: 0;
-    font-size: 12px;
-  }
-  .offer-card p {
-    padding: 0;
-  }
   /* Footer Adjustments */
   .footer {
     flex-direction: column;
@@ -1292,4 +881,648 @@ body {
 }
 .footer-container {
   overflow: hidden;
+}
+/*below 1024px */
+@media (max-width: 1024px) {
+  /* General Fix */
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Navigation Bar Adjustments */
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ele1 {
+    font-size: 1.5rem;
+  }
+
+  .ele3 {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 5vw;
+  }
+
+  .main-text {
+    padding: 0;
+  }
+
+  .bird {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .screw {
+    display: none;
+  }
+  .colors {
+    display: none;
+  }
+
+  /* About Me Section */
+  .about-me-heading {
+    padding-top: 15vh;
+    font-size: 1.8rem;
+  }
+
+  .about-me-content p {
+    font-size: 14px !important;
+    padding: 15px 0;
+  }
+
+  .about-me-resume {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .fan {
+    height: 15vh;
+  }
+
+  .about-me-resume button {
+    width: 140px;
+    padding: 8px;
+  }
+
+  /* Projects Section */
+  .slider img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Skills Section */
+  .section-5 {
+    gap: 9vh !important;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .skill-p p {
+    font-size: 13px;
+  }
+
+  /* Offers Section */
+  .offers {
+    padding-right: 3vw;
+  }
+
+  .offer-card h3 {
+    font-size: 14px;
+  }
+
+  .offer-card p {
+    font-size: 13px !important;
+  }
+
+  /* Footer Adjustments */
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .footer-section {
+    margin-bottom: 15px;
+  }
+
+  .footer-icons {
+    justify-content: center;
+  }
+
+  .feedback-form input,
+  .feedback-form textarea {
+    width: 90%;
+  }
+
+  .space-animation {
+    top: 50%;
+    max-width: 280px;
+    height: 280px;
+  }
+
+  .sun,
+  .earth,
+  .moon {
+    display: none;
+  }
+
+  /* Footer Stars */
+  .footer-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .star {
+    width: 20px;
+    opacity: 0.7;
+  }
+}
+@media (max-width: 768px) {
+  /* General Fix */
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Navigation Bar Adjustments */
+  .nav-menu {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ele1 {
+    font-size: 1.3rem;
+  }
+
+  .ele3 {
+    font-size: 0.8rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 3vw;
+  }
+
+  .bird {
+    width: 180px !important;
+    height: 180px !important;
+    top: 35%;
+    left: 50%;
+  }
+
+  .screw,
+  .colors {
+    display: none;
+  }
+
+  /* About Me Section */
+  .about-me-heading {
+    padding-top: 12vh;
+    font-size: 1.6rem;
+  }
+
+  .about-me-content p {
+    font-size: 13px !important;
+    padding: 10px 0;
+  }
+
+  .about-me-resume {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .fan {
+    height: 12vh;
+  }
+
+  .about-me-resume button {
+    width: 130px;
+    padding: 7px;
+  }
+
+  /* Projects Section */
+  .slider img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Skills Section */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Two icons per row */
+    gap: 10px;
+    justify-items: center;
+  }
+
+  .skills-grid img {
+    width: 60px !important; /* Adjust icon size */
+    height: 60px !important;
+    object-fit: contain;
+  }
+
+  .skill-p p {
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+  }
+  .section-5 {
+    gap: 2vh !important;
+  }
+
+  /* Offers Section */
+  .offer-card {
+    /* padding-right: 1vw; */
+    width: 140px;
+  }
+
+  .offer-card h3 {
+    font-size: 20px !important;
+  }
+
+  .offer-card p {
+    font-size: 10px !important;
+  }
+
+  /* Footer Adjustments */
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .footer-section {
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .footer-icons {
+    justify-content: center;
+  }
+
+  .feedback-form {
+    width: 90%; /* Ensure form stays within screen */
+    max-width: 500px; /* Prevents it from being too wide */
+    margin: 0 auto; /* Centers the form */
+    padding: 15px;
+  }
+
+  .feedback-form input,
+  .feedback-form textarea {
+    width: 100%; /* Makes sure fields take full width of form */
+    max-width: 100%; /* Prevents overflow */
+    padding: 10px; /* Ensures good spacing */
+    font-size: 14px; /* Adjust for readability */
+  }
+
+  .feedback-form textarea {
+    height: 120px; /* Prevents it from shrinking too much */
+    resize: vertical; /* Allows manual resizing */
+  }
+
+  .feedback-form button {
+    width: 100%; /* Makes submit button full width */
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  /* .space-animation {
+    top: 55%;
+    max-width: 150px !important;
+    height: 150px !important;
+  } */
+  .space-animation {
+    display: none;
+  }
+
+  .sun,
+  .earth,
+  .moon {
+    display: none;
+  }
+
+  /* Footer Stars */
+  .footer-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .star {
+    width: 18px;
+    opacity: 0.6;
+  }
+}
+
+/* for mobile device ---------------------*/
+@media (max-width: 580px) {
+  /* Section 1 */
+  .section-1 {
+    width: 100%;
+    height: auto;
+    padding: 5vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section-1 .ele1 {
+    font-size: 6vw;
+    padding: 4vw;
+    padding-left: 0 !important;
+  }
+  .section-1 .ele2 {
+    padding: 8vw;
+    font-size: 6vw;
+  }
+  @media (max-width: 580px) {
+    .ele2 {
+      margin-top: 62px;
+      padding-right: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between; /* Ensures left & right alignment */
+      align-items: center;
+      padding: 10px 20px;
+      gap: 20vw;
+    }
+
+    .ele1 {
+      text-align: left;
+      margin-left: 10vw;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-wrap: wrap; /* Prevents breaking into a new row */
+      justify-content: flex-end; /* Aligns items to the right */
+      text-align: left; /* Ensures links are aligned left */
+      gap: 4px;
+    }
+
+    .menu-item {
+      display: inline-block;
+      text-align: left;
+      white-space: nowrap; /* Prevents breaking */
+    }
+
+    .menu-item a {
+      font-size: 18px; /* Increases link size */
+      font-weight: 500;
+    }
+
+    .menu-item sup {
+      font-size: 12px;
+    }
+  }
+
+  .hero-section,
+  .main-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-text {
+    padding-left: 0;
+  }
+
+  /* .main-text .line1,
+  .main-text .line2 {
+    font-size: clamp(24px, 30vw, 80px);
+  } */
+  .main-text p {
+    width: 100%;
+    font-size: 15vw;
+  }
+  .line1 .line2 {
+    align-items: center !important;
+  }
+  .ele3 {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  .menu-item {
+    width: 100px;
+  }
+
+  .nav-menu p {
+    font-size: 14px;
+  }
+  .line {
+    margin-top: 90px;
+  }
+  .side-text-content {
+    /* position: absolute; */
+    font-size: 8vw;
+    left: 50%;
+    /* transform: translateX(-50%); */
+  }
+
+  .bird {
+    position: absolute;
+    top: 80px;
+    left: 55%;
+    transform: translateX(-50%);
+  }
+
+  .bird > dotlottie-player {
+    max-width: 160px;
+  }
+  .side-text p {
+    font-size: 20px;
+  }
+
+  /* Section 2 */
+  .section-2 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .my-image-card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+  }
+
+  .card1 {
+    width: 80%;
+    max-width: 320px;
+  }
+
+  .middle-part {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .about-me {
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+  }
+  .text {
+    width: 300px !important;
+  }
+  .about-me-heading {
+    padding-top: 0;
+  }
+
+  .about-me-heading p {
+    font-size: 12vw;
+    text-align: center;
+    width: 100%;
+  }
+
+  .about-me-content {
+    font-size: 4vw;
+    line-height: 1.3;
+    padding: 15px 10px;
+  }
+  .x-symbol {
+    display: none;
+  }
+  .about-me-resume button {
+    font-size: 12px;
+  }
+
+  /* Section 3 */
+  .section-3 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f2e8cf;
+  }
+
+  .top,
+  .bottom {
+    width: 100%;
+  }
+
+  /* Section 5 */
+  .section-5 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #bc4749;
+    padding-bottom: 80px;
+  }
+
+  /* Skills Section */
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(60px, auto));
+    gap: 10px;
+  }
+  .skill-p {
+    width: 300px;
+  }
+
+  .skill-p p {
+    width: 300px;
+    font-size: 14px;
+    padding-top: 20px;
+  }
+  .skills img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tech-heading {
+    font-size: 12vw !important;
+    padding-top: 5vh;
+  }
+
+  .offer-heading {
+    font-size: 12vw !important;
+  }
+  .offers-container h2 {
+    width: 500px !important;
+  }
+  .offers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10vh;
+  }
+  .offer-card {
+    padding: 0;
+    width: 150%;
+  }
+  .offer-card img {
+    width: 100%;
+    max-width: 600px; /* Ensures image is not too large */
+    height: auto;
+    border-radius: 5px;
+    margin: 0%;
+    object-fit: cover;
+  }
+
+  .offer-card h3 {
+    font-size: 30px !important;
+    padding-top: 5vw;
+  }
+
+  .offer-card p {
+    font-size: 22px !important;
+  }
+
+  /* Footer */
+  .footer-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: auto;
+  }
+
+  .footer-section {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer h3 {
+    font-size: 5vw;
+    padding-top: 2vh;
+  }
+
+  .footer ul {
+    padding: 0;
+  }
+
+  .footer-icons a {
+    font-size: 18px;
+  }
+
+  .feedback-form input,
+  .feedback-form textarea {
+    width: 90%;
+  }
+
+  .space-animation {
+    display: none;
+  }
 }
